@@ -9,7 +9,7 @@ const Imagepreview = ({ swappedImageUrl }) => {
         style={{
           backgroundImage: swappedImageUrl
             ? `url(${swappedImageUrl})`
-            : `url(/src/assets/Reference image.png)`,
+            : `url(../assets/Homepage reference.png)`,
         }}
       ></div>
     </>
