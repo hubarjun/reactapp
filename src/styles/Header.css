@@ -1,0 +1,26 @@
+.Header-container {
+  color: white;
+  height: 30dvh;
+  display: flex;
+  flex-direction: column;
+}
+.logo1 {
+  height: 40%;
+  width: 100%;
+}
+.logo2 {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -20px;
+}
+
+#ags-logo {
+  height: 100%;
+  margin-inline: 1rem;
+}
+#goat-logo {
+  height: 200%;
+}

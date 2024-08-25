@@ -1,0 +1,11 @@
+.file-container {
+  margin-block: 1.5rem;
+}
+.add-button {
+  background: #ceeeee;
+  color: #326666;
+  padding-block: 0.8rem;
+  padding-inline: 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+}
