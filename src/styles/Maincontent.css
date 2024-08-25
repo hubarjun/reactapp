@@ -51,6 +51,15 @@
     font-size: 7vw;
   }
 }
+
+.action-buttons {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
 .action-button {
   all: unset;
   background: #ceeeee;
@@ -58,7 +67,21 @@
   padding-block: 0.6rem;
   padding-inline: 0.5rem;
   border-radius: 10px;
-  font-weight: 600;
+  font-weight: 700;
   margin-right: 5px;
   margin-block-start: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.action-button > svg {
+  margin-inline-end: 7px;
+  color: #326666;
+  font-size: 1.3rem;
+}
+@media all and (max-width: 640px) {
+  .action-buttons {
+    flex-direction: column;
+    gap: 0;
+  }
 }

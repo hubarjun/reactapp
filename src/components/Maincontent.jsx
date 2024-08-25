@@ -3,13 +3,13 @@ import "../styles/Maincontent.css";
 import Addfile from "./Addfile";
 import Imagepreview from "./Imagepreview";
 
-const Maincontent = () => {
+const Maincontent = ({ heading }) => {
   return (
     <div className="maincontent">
       <Imagepreview />
       <div className="content">
         <div className="heading-container">
-          <p className="heading">Hop a ride with G.O.A.T</p>
+          <p className="heading">{heading}</p>
           <p>We know it's your thalapathy too.</p>
         </div>
         <Addfile />

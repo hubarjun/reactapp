@@ -1,5 +1,8 @@
 import "../styles/Footer.css";
 import heyareweareLogo from "../assets/Powered by HAWA .png";
+import { FaFacebookSquare, FaYoutube } from "react-icons/fa";
+import { RiInstagramFill } from "react-icons/ri";
+import { RiTwitterXLine } from "react-icons/ri";
 
 const Footer = () => {
   return (
@@ -19,6 +22,20 @@ const Footer = () => {
           </div>
           <div className="content-button"></div>
         </div>
+      </div>
+      <div className="social-links">
+        <a href="">
+          <FaFacebookSquare />
+        </a>
+        <a href="https://www.instagram.com/agsentertainment/?hl=en">
+          <RiInstagramFill />
+        </a>
+        <a href="">
+          <RiTwitterXLine />
+        </a>
+        <a href="">
+          <FaYoutube />
+        </a>
       </div>
       <div
         className="heyareweare-logo"
