@@ -4,12 +4,6 @@
   align-items: center;
   margin-block-start: 2.5rem;
 }
-/* .button-container {
-  background: whitesmoke;
-  height: 2.5rem;
-  width: 150px;
-  border-radius: 10px;
-} */
 
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 .button-container {
@@ -18,7 +12,7 @@
   background-color: whitesmoke;
   border-radius: 0.8rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
@@ -35,6 +29,9 @@
     font-family: "PT Sans", sans-serif;
     font-weight: 800;
     font-size: 0.6rem;
+  }
+  .button-content {
+    margin-inline-start: 10px;
   }
 }
 
@@ -58,4 +55,15 @@
     width: 70px;
     height: 60px;
   }
+}
+.social-links {
+  position: absolute;
+  display: flex;
+  gap: 10px;
+  bottom: 10px;
+  right: 50%;
+  transform: translate(50%);
+}
+.social-links a {
+  color: #ceeeee;
 }
