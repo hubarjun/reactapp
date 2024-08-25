@@ -1,18 +1,20 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Result from "../components/Result";
+import { downloadImage, base_url } from "../../api";
 
 function ResultPage() {
   const location = useLocation();
-  const { swapId } = location.state || {};
+  const { swapId } = useParams();
 
   if (!swapId) {
     return <div>Error: No swap ID found.</div>;
   }
 
-  const swappedImageUrl = `http://159.65.147.187:8000/swap/images/${swapId}`;
+  const swappedImageUrl = `${base_url}/swap/images/${swapId}`;
+
   const handleShare = () => {
     if (navigator.share) {
       navigator
@@ -33,26 +35,9 @@ function ResultPage() {
   };
 
   const handleDownload = () => {
-    fetch(swappedImageUrl, {
-      method: "GET",
-      headers: {
-        "Content-Type": "image/png",
-      },
-    })
-      .then((response) => response.blob())
-      .then((blob) => {
-        const url = window.URL.createObjectURL(blob);
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = "swapped_image.png"; // Set the default filename
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        window.URL.revokeObjectURL(url); // Clean up after download
-      })
-      .catch((error) => {
-        console.error("Error downloading the file:", error);
-      });
+    downloadImage(swapId).catch((error) => {
+      console.error("Error downloading the file:", error);
+    });
   };
 
   const handleCopyURL = () => {
