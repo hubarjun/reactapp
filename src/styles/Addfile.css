@@ -1,5 +1,6 @@
 .file-container {
   margin-block: 1.5rem;
+  cursor: pointer;
 }
 .add-button {
   background: #ceeeee;

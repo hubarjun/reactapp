@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../styles/Addfile.css";
+import { Toaster, toast } from "sonner";
 
 const Addfile = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
   const handleImageChange = async (event) => {
     const file = event.target.files[0];
     if (file && file.type.startsWith("image/")) {
@@ -14,31 +15,9 @@ const Addfile = () => {
       setLoading(true);
 
       const formData = new FormData();
-      formData.append("image", file);
-      console.log(formData);
-      for (let pair of formData.entries()) {
-        console.log(pair[0] + ": " + pair[1]);
-      }
+      formData.append("file", file);
 
       try {
-        /* const response = await axios.post(
-          "http://159.65.147.187:8000/swap/upload/1",
-          formData,
-          {
-            headers: {
-              "Content-Type": "multipart/form-data",
-              Accept: "application/json",
-            },
-          }
-        );
-        setLoading(false); // Set loading to false after receiving the response
-
-        // Extract the swap id from the response
-        const swapId = response.data.id;
-
-        // Navigate to the results page with the swapId as state
-        navigate("/result", { state: { swapId } }); */
-
         const response = await fetch(
           `http://159.65.147.187:8000/swap/upload/1`,
           {
@@ -49,21 +28,31 @@ const Addfile = () => {
             body: formData,
           }
         );
+
+        setLoading(false);
+
         if (response.ok) {
           const data = await response.json();
           if (data.error) {
-            console.log(data.error);
+            toast.error(data.error);
           } else {
             const swapId = data.id;
-            navigate("/result", { state: { swapId } });
+            navigate(`${swapId}`, { state: { swapId } });
+          }
+        } else {
+          const errorData = await response.json();
+          if (errorData.error) {
+            toast.error(errorData.error);
+          } else {
+            toast.error(`Error: ${response.status} ${response.statusText}`);
           }
         }
       } catch (error) {
         setLoading(false);
-        console.error("Error uploading image:", error);
+        toast.error(`Error uploading image: ${error.message}`);
       }
     } else {
-      alert("Please select an image file");
+      toast.error("Please select an image file (PNG, JPG, WEBP)");
     }
   };
 
@@ -76,18 +65,19 @@ const Addfile = () => {
         <input
           id="addfile"
           hidden
-          accept="image/*"
+          accept=".png, .jpg, .jpeg, .webp"
           onChange={handleImageChange}
           type="file"
         />
       </div>
       {loading && (
         <div>
-          <p style={{ textAlign: "center" }}>
+          <p style={{ margin: "1rem" }}>
             Processing your image, please wait...
           </p>
         </div>
       )}
+      <Toaster position="top-right" richColors reverseOrder={false} />{" "}
     </>
   );
 };
