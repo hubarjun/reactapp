@@ -1,17 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
 .footer-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-block-start: 2.5rem;
 }
-/* .button-container {
-  background: whitesmoke;
-  height: 2.5rem;
-  width: 150px;
-  border-radius: 10px;
-} */
 
-@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 .button-container {
   width: 150px;
   height: 2.5rem;
@@ -23,19 +18,19 @@
   font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
   font-size: 0.5rem;
+}
 
-  a {
-    text-decoration: none;
-    color: #000000;
-    font-family: "PT Sans", sans-serif;
-  }
+.button-container a {
+  text-decoration: none;
+  color: #000000;
+  font-family: "PT Sans", sans-serif;
+}
 
-  p {
-    color: #000000;
-    font-family: "PT Sans", sans-serif;
-    font-weight: 800;
-    font-size: 0.6rem;
-  }
+.button-container p {
+  color: #000000;
+  font-family: "PT Sans", sans-serif;
+  font-weight: 800;
+  font-size: 0.6rem;
 }
 
 .content-button {
@@ -48,14 +43,15 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
+
 .heyareweare-logo {
   position: absolute;
   cursor: pointer;
   bottom: 0;
   right: 10px;
+}
 
-  img {
-    width: 70px;
-    height: 60px;
-  }
+.heyareweare-logo img {
+  width: 70px;
+  height: 60px;
 }
