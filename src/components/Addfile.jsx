@@ -21,7 +21,7 @@ const Addfile = () => {
         const swapId = data.id;
         navigate(`${swapId}`, { state: { swapId } });
       } else {
-        toast.error(error);
+        toast.error("unable to swap please try any other image");
       }
     } else {
       toast.error("Please select an image file (PNG, JPG, WEBP)");

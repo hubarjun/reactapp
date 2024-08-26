@@ -24,16 +24,16 @@ const Footer = () => {
         </div>
       </div>
       <div className="social-links">
-        <a href="">
+        <a href="https://www.facebook.com/agsentertainmentpvtltd/">
           <FaFacebookSquare />
         </a>
         <a href="https://www.instagram.com/agsentertainment/?hl=en">
           <RiInstagramFill />
         </a>
-        <a href="">
+        <a href="https://twitter.com/Ags_production">
           <RiTwitterXLine />
         </a>
-        <a href="">
+        <a href="https://www.youtube.com/@agsentertainment">
           <FaYoutube />
         </a>
       </div>

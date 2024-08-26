@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Result from "../components/Result";
 import { downloadImage, base_url } from "../../api";
+import { Toaster, toast } from "sonner";
 
 function ResultPage() {
   const location = useLocation();
@@ -24,31 +25,20 @@ function ResultPage() {
           text: "See my face swap result here!",
         })
         .then(() => {
-          console.log("Sharing successful");
+          toast.info("Sharing ");
         })
         .catch((error) => {
-          console.error("Sharing failed:", error);
+          toast.error("Sharing failed:", error);
         });
     } else {
-      alert("Sharing is not supported in this browser.");
+      toast.warning("Sharing is not supported in this browser.");
     }
   };
 
   const handleDownload = () => {
     downloadImage(swapId).catch((error) => {
-      console.error("Error downloading the file:", error);
+      toast.error("Error downloading the file:", error);
     });
-  };
-
-  const handleCopyURL = () => {
-    navigator.clipboard
-      .writeText(window.location.href)
-      .then(() => {
-        alert("URL copied to clipboard!");
-      })
-      .catch((error) => {
-        console.error("Failed to copy URL:", error);
-      });
   };
 
   return (
@@ -58,11 +48,11 @@ function ResultPage() {
         <Result
           swappedImageUrl={swappedImageUrl}
           handleShare={handleShare}
-          handleCopyURL={handleCopyURL}
           handleDownload={handleDownload}
         />
         <Footer />
       </div>
+      <Toaster position="top-right" richColors reverseOrder={false} />
     </>
   );
 }
