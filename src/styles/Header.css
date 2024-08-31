@@ -8,7 +8,6 @@
 .logo1 {
   height: 40%;
   width: max-content;
-  cursor: pointer;
 }
 
 .logo2 {
@@ -23,6 +22,7 @@
 #ags-logo {
   height: 80%;
   margin-inline: 1rem;
+  cursor: pointer;
 }
 
 #goat-logo {
@@ -47,5 +47,10 @@
 @media (min-width: 1280px) {
   #ags-logo {
     height: 180%;
+  }
+}
+@media (max-height: 600px) {
+  .Header-container {
+    height: 20dvh;
   }
 }

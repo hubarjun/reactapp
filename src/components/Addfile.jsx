@@ -21,7 +21,7 @@ const Addfile = () => {
         const swapId = data.id;
         navigate(`${swapId}`, { state: { swapId } });
       } else {
-        toast.error("unable to swap please try any other image");
+        toast.error("Unable to swap please try any other image");
       }
     } else {
       toast.error("Please select an image file (PNG, JPG, WEBP)");
@@ -34,7 +34,7 @@ const Addfile = () => {
         {loading ? (
           <div className="spinner"></div> // Show spinner when loading
         ) : (
-          <div className="add-button">Add my Face</div> // Show button when not loading
+          <div className="add-button">Add my face</div> // Show button when not loading
         )}
         {!loading && (
           <input

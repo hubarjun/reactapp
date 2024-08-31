@@ -1,16 +1,20 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import "./styles/App.css";
-import Home from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
-import ResultPage from "./pages/ResultPage";
+import LoadingPage from "./pages/LoadingPage";
+
+const Home = lazy(() => import("./pages/Home"));
+const ResultPage = lazy(() => import("./pages/ResultPage"));
 
 const App = () => {
   return (
     <div className="app-container">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/:swapId" element={<ResultPage />} />
-      </Routes>
+      <Suspense fallback={<LoadingPage />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/:swapId" element={<ResultPage />} />
+        </Routes>
+      </Suspense>
     </div>
   );
 };

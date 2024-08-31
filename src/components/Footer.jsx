@@ -1,8 +1,8 @@
 import "../styles/Footer.css";
-import heyareweareLogo from "../assets/Powered by HAWA .png";
 import { FaFacebookSquare, FaYoutube } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import { RiTwitterXLine } from "react-icons/ri";
+import heyareweareLogo from "../assets/heyareweare production logo.png";
 
 const Footer = () => {
   return (

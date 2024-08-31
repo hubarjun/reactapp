@@ -3,14 +3,19 @@
   padding: 0;
   box-sizing: border-box;
 }
-html{
+html {
   overflow: hidden;
 }
 .app-container {
   width: 100vw;
   height: 100dvh;
-  background-image: url("../assets/backgroundImageproduction.png");
+  background-image: url("../assets/backgroundimagetesting.png");
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: center;
   background-size: cover;
+}
+@media (max-width: 480px) {
+  .app-container {
+    background-image: url("../assets/backgroundimagemobile.png");
+  }
 }
