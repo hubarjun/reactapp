@@ -9,7 +9,7 @@ html {
 .app-container {
   width: 100vw;
   height: 100dvh;
-  background-image: url("../assets/backgroundimagetesting.png");
+  background-image: url("../assets/backgroundimage.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

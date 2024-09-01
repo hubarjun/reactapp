@@ -15,13 +15,12 @@
   width: 50%; */
   height: 100%;
   width: 50%;
-
-  #Reference-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-  }
+}
+.image-container > #Reference-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 .content {
   width: 50%;
@@ -37,8 +36,6 @@
 .heading {
   font-size: 3vw;
   font-weight: 400;
-  font-style: italic;
-  text-transform: uppercase;
 }
 .heading + p {
   font-size: 1.3vw;
@@ -47,21 +44,19 @@
   .image-container {
     width: 100%;
     height: 50%;
-    padding-inline: 2vw;
-
-    #Reference-image {
-      object-fit: fill;
-    }
+    padding-inline: 12vw;
   }
-
+  .image-container > #Reference-image {
+    object-fit: fill;
+  }
   .content {
     width: 100%;
     justify-content: center;
     margin-block-start: 1rem;
   }
   .heading + p {
-    font-size: 80%;
-    font-weight: 500;
+    font-size: 4vw;
+    font-weight: 300;
   }
   .maincontent {
     flex-direction: column;
@@ -111,5 +106,13 @@
   .action-buttons {
     flex-direction: column;
     gap: 0;
+  }
+}
+@media (min-height: 500px) {
+  .heading + p {
+    margin-top: 5px;
+  }
+  .hashtag {
+    font-size: 1.1rem;
   }
 }

@@ -15,7 +15,10 @@ const Footer = () => {
           }
         >
           <div className="button-content">
-            <a href="https://www.agscinemas.com/movies.php">
+            <a
+              style={{ fontSize: "0.5rem" }}
+              href="https://www.agscinemas.com/movies.php"
+            >
               Book Your Tickets
             </a>
             <p>BookMyShow</p>

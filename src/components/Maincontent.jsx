@@ -10,10 +10,10 @@ const Maincontent = ({ heading }) => {
       <div className="content">
         <div className="heading-container">
           <p className="heading">{heading}</p>
-          <p>We know it's your thalapathy too.</p>
+          <p>We know it's your Thalapathy too.</p>
         </div>
         <Addfile />
-        <p className="hashtag">#Ridewiththalapathy</p>
+        <p className="hashtag">#RidewithThalapathy</p>
       </div>
     </div>
   );
